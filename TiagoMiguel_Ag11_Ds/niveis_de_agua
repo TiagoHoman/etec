@@ -1,0 +1,47 @@
+from colorama import Fore, Style, init
+
+# Faz o colorama funcionar direitinho no terminal (inclusive no Windows)
+init()
+
+# Lista com a situação de cada nível (posição 0 = nível 1)
+mensagens = [
+    "Nível 1 - Muito baixo (CRÍTICO)",
+    "Nível 2 - Baixo",
+    "Nível 3 - Médio",
+    "Nível 4 - Alto",
+    "Nível 5 - Muito alto (ALERTA)",
+]
+
+
+def definir_cor(nivel):
+    """Recebe o nível (1 a 5) e devolve a cor correspondente."""
+    if nivel == 1:
+        return Fore.RED
+    elif nivel == 2:
+        return Fore.YELLOW
+    elif nivel == 3:
+        return Fore.GREEN
+    elif nivel == 4:
+        return Fore.CYAN
+    elif nivel == 5:
+        return Fore.BLUE
+    else:
+        return Fore.WHITE  # nível inválido
+
+
+def exibir_situacao(nivel):
+    """Mostra no terminal a situação do reservatório com a cor certa."""
+    cor = definir_cor(nivel)
+    mensagem = mensagens[nivel - 1]  # nível 1 está na posição 0
+    print(cor + mensagem)
+
+
+# Simulação do monitoramento: passa por todos os níveis
+print("=== Monitoramento do Reservatório ===\n")
+
+for nivel in range(1, 6):
+    exibir_situacao(nivel)
+
+# Restaura o estilo padrão do terminal
+print(Style.RESET_ALL)
+
