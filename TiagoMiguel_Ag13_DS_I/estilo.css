@@ -1,0 +1,53 @@
+/* CSS EXTERNO (arquivo estilo.css) */
+
+/* Classe .foto: vale para todas as imagens */
+.foto {
+  width: 300px;        /* largura igual para todas */
+  height: 200px;       /* altura igual para todas */
+  object-fit: cover;   /* corta o excesso da foto em vez de esticar ou amassar */
+  display: block;      /* faz a imagem ocupar a linha toda, sem espaço estranho embaixo */
+  margin-bottom: 10px; /* espaço entre a foto e o texto */
+}
+/* FLEXBOX: layout das três seções lado a lado */
+
+/* .container é a caixa de fora que segura as 3 seções */
+.container {
+  display: flex;   /* liga o Flexbox: os filhos ficam em linha */
+  gap: 20px;       /* espaço entre as seções */
+  padding: 20px;   /* espaço entre o container e a borda da página */
+}
+
+/* .secao é cada uma das 3 colunas */
+.secao {
+  flex: 1;         /* as 3 dividem o espaço igualmente */
+}
+
+/* .titulo-secao padroniza o título das 3 seções */
+.titulo-secao {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+/* IDs: estilo exclusivo de cada seção (cada id existe uma vez só) */
+
+#filmes {
+  background-color: #fde8e8;  /* rosa clarinho */
+}
+
+#musica {
+  background-color: #e8f0fd;  /* azul clarinho */
+}
+
+#games {
+  background-color: #e8fdec;  /* verde clarinho */
+}
+
+/* Detalhes que valem para as 3 seções (classe .secao) */
+.secao {
+  padding: 15px;          /* espaço dentro da caixa colorida */
+  border-radius: 10px;    /* cantos arredondados */
+}
+
+/* Espaço depois de cada texto, para não colar na imagem de baixo */
+.secao p {
+  margin-bottom: 15px;
+}
